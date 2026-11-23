@@ -1,0 +1,102 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%=======================Teoremas
+\def\sp{7mm}
+\setlength{\parskip}{\sp}
+
+\usepackage{amsthm}
+\newtheoremstyle{ts}{\sp}{\sp}{}{}{\bfseries}{.}{0.5em}{}
+\theoremstyle{ts}
+\newtheorem{defin}{Definici\'on}[section]
+\newtheorem{ax}{Axioma}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{obs}{Observaci\'on}[section]
+\newtheorem{prop}{Proposici\'on}[section]
+\newtheorem{cor}{Corolario}[section]
+\newtheorem{ejem}{Ejemplo}[section]
+\newtheorem{nota}{Notaci\'on}[section]
+%==============================
+
+%=========Parentesis===========
+\newcommand{\rpar}[1]{\left( #1\right) }
+\newcommand{\rparB}[1]{\Big( #1\Big) }
+\newcommand{\rcor}[1]{\left[  #1\right] }
+\newcommand{\rllav}[1]{\left\lbrace #1\right\rbrace }
+\newcommand{\rllavB}[1]{\Big\lbrace #1\Big\rbrace }
+%================
+
+\author{Carlos Flores Andrade}
+\begin{document}
+Consideremos $a\in\mathbb{R}$ con $a>0$. Nos preguntamos qué debe cumplir $n\in\mathbb{N}\setminus\rllav{0}$ para que
+\begin{equation}
+\tag{1}
+\rpar{\dfrac{a}{n}}^2\leq a
+\end{equation}
+
+\begin{lem}\label{lema1}
+Sean $a\in\mathbb{R}$ con $a>0$ y $n\in\mathbb{N}\setminus\rllav{0}$. Entonces $\rpar{\frac{a}{n}}^2\leq a$ si y s\'olo si $a\leq n^2$.
+\begin{proof}
+Supongamos que se cumple (1). Como $\frac{1}{n}$ existe y es positivo, tenemos que
+\[
+\dfrac{a^2}{n^2}\leq a\quad \Longleftrightarrow\quad a^2\leq an^2 \quad\Longleftrightarrow\quad 0\leq an^2-a^2
+\]
+
+\[
+0\leq a(n^2-a)
+\]
+Esta desigualdad se satisface si y solo si $n^2-a\geq 0$, pues $a>0$ y, por tanto, el otro factor debe ser mayor o igual que cero. En consecuencia, $a\leq n^2$.
+\end{proof}
+\end{lem}
+
+\begin{lem}\label{lema2}
+Sean $a\in\mathbb{R}$ con $a>0$ y $n\in\mathbb{N}\setminus\rllav{0}$. Entonces $a\leq(an)^2$ si y s\'olo si $\frac{1}{a}\leq n^2$.
+\begin{proof}
+Dadas las hip\'otesis, supongamos que $a\leq(an)^2$. Esta desigualdad se cumple si y s\'olo si
+\begin{align*}
+a\leq a^2n^2 &\quad\Longleftrightarrow\quad 1\leq an^2 \quad\text{(ya que $a>0$)}\\
+&\quad\Longleftrightarrow\quad \dfrac{1}{a}\leq n^2
+\end{align*}
+\end{proof}
+\end{lem}
+
+\begin{teo}\label{cotas}
+Sea $a\in\mathbb{R}$ con $a>0$. Entonces
+\[\rpar{\dfrac{a}{\lceil a\rceil}}^2\leq a\leq \rpar{a\left\lceil\dfrac{1}{a}\right\rceil}^2\]
+\begin{proof}
+Sabemos que $a\leq \lceil a\rceil$. Adem\'as, como $a>0$, se tiene $1\leq \lceil a\rceil$. Dado que $\lceil a\rceil>0$, resulta que $\lceil a\rceil\leq\lceil a\rceil^2$. Por transitividad del orden en $\mathbb{R}$, obtenemos $a\leq \lceil a\rceil^2$. Por el lema \ref{lema1}, concluimos que $(\frac{a}{\lceil a\rceil})^2\leq a$.
+
+Por otra parte, $\frac{1}{a}\leq\lceil\frac{1}{a}\rceil$. An\'alogamente, como $\frac{1}{a}>0$, se tiene $\lceil \frac{1}{a}\rceil\geq 1$. Esto implica que $\lceil \frac{1}{a}\rceil^2\geq \lceil \frac{1}{a}\rceil$. Por transitividad, obtenemos $\frac{1}{a}\leq \lceil \frac{1}{a}\rceil^2$. Finalmente, por el lema \ref{lema2}, sabemos que $a\leq \rpar {a\lceil\frac{1}{a}\rceil}^2$.
+\end{proof}
+\end{teo}
+
+\begin{teo}
+Sea $a\in\mathbb{R}$ con $a>0$. Entonces existe un \'unico $x>0$ tal que $x^2=a$.
+\begin{proof}
+Dadas las hip\'otesis, consideremos el conjunto
+\[A:=\rllav{x>0:\ x^2\leq a}\]
+Por el teorema \ref{cotas}, sabemos que $A\neq\varnothing$, ya que $\rpar{\frac{a}{\lceil a\rceil}}^2\leq a$. Adem\'as, $A$ est\'a acotado superiormente: $a\left\lceil\frac{1}{a}\right\rceil$ es una cota superior de $A$. En efecto, si existiera $z\in A$ tal que
+\[a\left\lceil\dfrac{1}{a}\right\rceil<z\]
+entonces, como la funci\'on \textit{elevar al cuadrado} es creciente en $\mathbb{R}_+$, tendr\'iamos $(a\left\lceil\frac{1}{a}\right\rceil)^2<z^2$. Dado que $z\in A$, se cumple $z^2\leq a$. Por transitividad del orden en $\mathbb{R}$, esto implicar\'ia $(a\left\lceil\frac{1}{a}\right\rceil)^2<a$, lo cual contradice el teorema \ref{cotas}. Por tanto, $A$ es no vac\'io y est\'a acotado superiormente; en consecuencia, existe $\alpha :=\sup A$.
+
+Recordemos que la funci\'on \textit{elevar al cuadrado} es continua en todo $\mathbb{R}$. Por ello, para todo $\varepsilon>0$ existe $\delta>0$ tal que, para todo $x\in\mathbb{R}$,
+\[\tag{$\ast$}
+\vert x-\alpha\vert <\delta\quad\Longrightarrow\quad  \vert x^2-\alpha^2\vert<\varepsilon\] 
+
+Supongamos que $a<\alpha^2$. Para $\vert \alpha^2-a\vert$ existe $\delta_1$ que satisface $(\ast)$. Adem\'as, para $\delta_1$ existe $y\in A$ tal que $\alpha-\delta_1<y<\alpha$. Por ello, $\vert y-\alpha\vert<\delta_1$ y, en consecuencia, $\vert y^2-\alpha^2\vert<\vert\alpha^2-a\vert$; es decir, $\alpha^2-y^2<\alpha^2-a$. Esto implica que $a<y^2$, lo cual es absurdo porque $y\in A$. Por tanto, $\alpha^2\leq a$.
+
+Supongamos ahora que $\alpha^2<a$. Para $a-\alpha^2$ existe $\delta_2$ que satisface $(\ast)$. Consideremos un $w$ tal que $\alpha<w<\alpha+\delta_2$. Entonces $\vert w-\alpha\vert<\delta_2$, de donde $\vert w^2-\alpha^2\vert<a-\alpha^2$. Esto implica que $w^2<a$, es decir, $w\in A$. Sin embargo, como $\alpha$ es el supremo de $A$, se tiene $w\leq\alpha$, lo cual contradice la elecci\'on de $w$.
+
+Concluimos que $\alpha^2=a$.
+
+Supongamos, por \'ultimo, que existe $\beta>0$ tal que $\beta^2=a$. Entonces $\beta\in A$ y, por tanto, $\beta\leq\alpha$. Si $\beta<\alpha$, por las propiedades del supremo existe $x_\beta\in A$ tal que $\beta<x_\beta$. Esto implica que $\beta^2=a<x_\beta^2$, lo cual contradice que $x_\beta\in A$. Por tanto, $\alpha$ es el \'unico real positivo tal que $\alpha^2=a$.
+\end{proof}
+\end{teo}
+
+\end{document}
