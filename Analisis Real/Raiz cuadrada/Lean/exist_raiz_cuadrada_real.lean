@@ -1,4 +1,4 @@
-import AlgebraFormalizada.RaizCuadrada.Teorema
+import Teorema
 
 /-! 
 Sea $a\in\mathbb{R}$ con $a>0$. Entonces existe un \'unico $x>0$ tal que $x^2=a$.

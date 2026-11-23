@@ -1,5 +1,5 @@
-import AlgebraFormalizada.RaizCuadrada.Lema1
-import AlgebraFormalizada.RaizCuadrada.Lema2
+import Lema1
+import Lema2
 
 /-!
  Sea $a\in\mathbb{R}$ con $a>0$ entonces

@@ -1,1 +1,1 @@
-import AlgebraFormalizada.RaizCuadrada.exist_raiz_cuadrada_real
+import exist_raiz_cuadrada_real

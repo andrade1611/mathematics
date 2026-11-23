@@ -1,6 +1,6 @@
-name = "AlgebraFormalizada"
+name = "mathematics"
 version = "0.1.0"
-defaultTargets = ["AlgebraFormalizada"]
+defaultTargets = ["Lema1", "Lema2", "Teorema", "exist_raiz_cuadrada_real"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -14,4 +14,17 @@ scope = "leanprover-community"
 rev = "v4.34.0"
 
 [[lean_lib]]
-name = "AlgebraFormalizada"
+name = "Lema1"
+srcDir = "Analisis Real/Raiz cuadrada/Lean"
+
+[[lean_lib]]
+name = "Lema2"
+srcDir = "Analisis Real/Raiz cuadrada/Lean"
+
+[[lean_lib]]
+name = "Teorema"
+srcDir = "Analisis Real/Raiz cuadrada/Lean"
+
+[[lean_lib]]
+name = "exist_raiz_cuadrada_real"
+srcDir = "Analisis Real/Raiz cuadrada/Lean"
