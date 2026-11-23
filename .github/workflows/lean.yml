@@ -1,0 +1,22 @@
+name: Comprobar Lean
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar rutas de los módulos Lean
+        run: |
+          mkdir -p AlgebraFormalizada/RaizCuadrada
+          cp "Analisis Real/Raiz cuadrada/Lean/"*.lean AlgebraFormalizada/RaizCuadrada/
+      - uses: leanprover/lean-action@v1
+        with:
+          test: false
