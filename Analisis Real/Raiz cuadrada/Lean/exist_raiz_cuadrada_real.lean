@@ -1,6 +1,8 @@
 import AlgebraFormalizada.RaizCuadrada.Teorema
 
-/-! Existencia y unicidad de la raíz cuadrada positiva por el supremo. -/
+/-! 
+Sea $a\in\mathbb{R}$ con $a>0$. Entonces existe un \'unico $x>0$ tal que $x^2=a$.
+-/
 
 theorem exist_raiz_cuadrada_real (a : ℝ) (ha : 0 < a) :
     ∃! x : ℝ, 0 < x ∧ x^2 = a := by
