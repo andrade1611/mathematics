@@ -1,3 +1,9 @@
+/-
+Copyright (c) 2026 Carlos Flores Andrade.
+SPDX-License-Identifier: MIT
+Repositorio: https://github.com/andrade1611/mathematics
+-/
+
 import Teorema
 
 /-! 

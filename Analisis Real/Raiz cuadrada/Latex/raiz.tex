@@ -4,7 +4,14 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{url}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+%=====Color de pagina======
+\usepackage{xcolor}
+\definecolor{papelLibro}{HTML}{FAF0E6}
+\pagecolor{papelLibro}
 
 %=======================Teoremas
 \def\sp{7mm}
@@ -32,8 +39,16 @@
 \newcommand{\rllavB}[1]{\Big\lbrace #1\Big\rbrace }
 %================
 
+\title{La ra\'iz cuadrada}
 \author{Carlos Flores Andrade}
+\date{2026}
 \begin{document}
+\maketitle
+
+\noindent\textit{Autor\'ia y licencia.} \copyright\ 2026 Carlos Flores Andrade. Licencia MIT; v\'ease \url{https://github.com/andrade1611/mathematics/blob/main/LICENSE}.
+
+\noindent\textit{Verificaci\'on formal.} Los resultados de este documento cuentan con una formalizaci\'on en Lean 4 y Mathlib, disponible en \url{https://github.com/andrade1611/mathematics}. Los archivos Lean se compilan autom\'aticamente mediante GitHub Actions.
+
 Consideremos $a\in\mathbb{R}$ con $a>0$. Nos preguntamos qué debe cumplir $n\in\mathbb{N}\setminus\rllav{0}$ para que
 \begin{equation}
 \tag{1}
